@@ -80,32 +80,4 @@ class TodoControllerTest {
                 .andExpect(jsonPath("$.code").value(HttpStatus.OK.value()))
                 .andExpect(jsonPath("$.message").value("Todo not found"));
     }
-
-//    @Test
-//    void todo_저장_시_정상적으로_저장된다() throws Exception {
-//        // given
-//        AuthUser authUser = new AuthUser(1l, "test@email.com", UserRole.USER);
-//        TodoSaveRequest todoSaveRequest = new TodoSaveRequest("Todo Title", "Todo Content");
-//
-//        // UserResponse
-//        UserResponse userResponse = new UserResponse(authUser.getId(), authUser.getEmail());
-//        TodoSaveResponse todoSaveResponse = new TodoSaveResponse(1L, "Todo Title", "Todo Content", "Sunny", userResponse);
-//
-//        // when
-//        when(todoService.saveTodo(any(AuthUser.class), any(TodoSaveRequest.class)))
-//                .thenReturn(todoSaveResponse);
-//
-//        // then
-//        ObjectMapper objectMapper = null;
-//
-//        mockMvc.perform(post("/todos")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(objectMapper.writeValueAsString(todoSaveRequest))
-//                        .header("Authorization", "Bearer token")) // assuming Auth header required
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.id").value(todoSaveResponse.getId()))
-//                .andExpect(jsonPath("$.title").value(todoSaveResponse.getTitle()))
-//                .andExpect(jsonPath("$.description").value(todoSaveResponse.getContents()));
-//    }
-
 }
