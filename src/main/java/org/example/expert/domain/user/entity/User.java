@@ -7,6 +7,8 @@ import org.example.expert.domain.common.dto.AuthUser;
 import org.example.expert.domain.common.entity.Timestamped;
 import org.example.expert.domain.user.enums.UserRole;
 
+import java.sql.SQLOutput;
+
 @Getter
 @Entity
 @NoArgsConstructor
@@ -37,6 +39,7 @@ public class User extends Timestamped {
     }
 
     public static User fromAuthUser(AuthUser authUser) {
+        System.out.println("role :"+authUser.getUserRole());
         return new User(authUser.getId(), authUser.getEmail(), authUser.getUserRole(), authUser.getNickname());
     }
 
